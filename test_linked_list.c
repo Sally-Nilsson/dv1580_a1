@@ -28,7 +28,7 @@ void test_insert()
     assert_node_value(head, 20, "test_insert");
     assert_node_value(head->next, 10, "test_insert");
 
-    list_cleanup(&head);
+    // list_cleanup(&head);
 }
 
 // Test inserting elements
@@ -59,7 +59,7 @@ void test_insert_after()
     list_init(&head);
     list_insert(&head, 10);
     list_insert(&head, 20);
-    Node *node = list_search(head, 20);
+    Node *node = list_search(&head, 20);
     list_insert_after(node, 15);
     assert_node_value(node->next, 15, "test_insert_after");
 
@@ -88,7 +88,7 @@ void test_search()
     list_init(&head);
     list_insert(&head, 10);
     list_insert(&head, 20);
-    Node *found = list_search(head, 10);
+    Node *found = list_search(&head, 10);
     assert_node_value(found, 10, "test_search");
 
     list_cleanup(&head);

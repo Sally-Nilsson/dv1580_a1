@@ -9,6 +9,7 @@ OBJ = $(SRC:.c=.o)
 
 # Default target
 all: mmanager list test_mmanager test_list
+#all: mmanager test_mmanager
 
 # Rule to create the dynamic library
 $(LIB_NAME): $(OBJ)
